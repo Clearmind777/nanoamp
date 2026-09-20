@@ -210,21 +210,21 @@ align_reads_r <- function(reads_path, reference_path, threads = 1L) {
   for (i in seq_len(n)) {
     read <- fq$sequence[i]
     read_rc <- reverse_complement(read)
-    a_fwd <- Biostrings::pairwiseAlignment(
+    a_fwd <- pa_pairwise_alignment(
       read, ref$sequence, type = "global", gapOpening = 5, gapExtension = 1
     )
-    a_rev <- Biostrings::pairwiseAlignment(
+    a_rev <- pa_pairwise_alignment(
       read_rc, ref$sequence, type = "global", gapOpening = 5, gapExtension = 1
     )
-    if (Biostrings::score(a_rev) > Biostrings::score(a_fwd)) {
+    if (pa_score(a_rev) > pa_score(a_fwd)) {
       aln <- a_rev
       strand <- "-"
     } else {
       aln <- a_fwd
       strand <- "+"
     }
-    q <- as.character(Biostrings::aligned(Biostrings::pattern(aln)))
-    s <- as.character(Biostrings::aligned(Biostrings::subject(aln)))
+    q <- as.character(pa_aligned(pa_pattern(aln)))
+    s <- as.character(pa_aligned(pa_subject(aln)))
     ops <- alignment_to_ops(q, s)
     nm <- if (nrow(ops) == 0) {
       0L

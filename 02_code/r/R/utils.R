@@ -91,12 +91,16 @@ nanoamp_tool_path <- function(tool, required = TRUE) {
   }
   env_name <- paste0("NANOAMP_", toupper(gsub("[^A-Za-z0-9]", "_", tool)))
   env <- Sys.getenv(env_name, unset = "")
-  if (nzchar(env) && file.exists(env)) return(normalizePath(env, mustWork = TRUE))
-
+  candidates <- character(0)
+  if (nzchar(env)) candidates <- c(candidates, env)
   dep <- nanoamp_dependence_dir()
   if (!is.null(dep)) {
-    candidate <- file.path(dep, nanoamp_platform(), "bin", exe)
-    if (file.exists(candidate)) return(normalizePath(candidate, mustWork = TRUE))
+    candidates <- c(candidates, file.path(dep, nanoamp_platform(), "bin", exe))
+  }
+  for (candidate in candidates) {
+    if (!file.exists(candidate)) next
+    prepared <- nanoamp_prepare_tool(candidate)
+    if (!is.null(prepared)) return(prepared)
   }
   path <- Sys.which(tool)
   if (nzchar(path)) return(unname(path))
@@ -113,6 +117,17 @@ nanoamp_tool_path <- function(tool, required = TRUE) {
       env_name
     ), call. = FALSE)
   }
+  NULL
+}
+
+nanoamp_prepare_tool <- function(path) {
+  path <- normalizePath(path, mustWork = TRUE)
+  if (file.access(path, 1) == 0) return(path)
+  if (.Platform$OS.type != "windows") {
+    try(Sys.chmod(path, mode = "0755"), silent = TRUE)
+    if (file.access(path, 1) == 0) return(path)
+  }
+  log_warn("Bundled tool is not executable: ", path, "; falling back to PATH")
   NULL
 }
 

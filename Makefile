@@ -16,7 +16,7 @@ install:
 	R CMD INSTALL $(R_PKG)
 
 test:
-	Rscript -e 'devtools::test("$(R_PKG)", reporter = "summary")'
+	Rscript -e 'devtools::test("$(R_PKG)", reporter = "summary", stop_on_failure = TRUE)'
 
 check:
 	mkdir -p 05_builds/r

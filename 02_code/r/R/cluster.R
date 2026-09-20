@@ -157,13 +157,13 @@ build_cluster_consensus <- function(seqs, idx, dm,
 }
 
 pairwise_diffs <- function(query, ref) {
-  pa <- Biostrings::pairwiseAlignment(
+  pa <- pa_pairwise_alignment(
     Biostrings::DNAString(query),
     Biostrings::DNAString(ref),
     type = "global", gapOpening = 5, gapExtension = 1
   )
-  q <- as.character(Biostrings::aligned(Biostrings::pattern(pa)))
-  s <- as.character(Biostrings::aligned(Biostrings::subject(pa)))
+  q <- as.character(pa_aligned(pa_pattern(pa)))
+  s <- as.character(pa_aligned(pa_subject(pa)))
   alignment_to_ops(q, s)
 }
 

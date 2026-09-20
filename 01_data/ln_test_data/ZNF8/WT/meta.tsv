@@ -1,5 +1,0 @@
-dataset	sample	role	cluster	link_path	target_path	source_note
-ZNF8	WT	consensus	1	01_data/ln_test_data/ZNF8/WT/consensus.1.fa	01_data/test_data/ZNF8/2026.8.29-wt/WT_TSM20260828-020-01380_20260829-020-BAN05-4_B11.1.seq	
-ZNF8	WT	reads		01_data/ln_test_data/ZNF8/WT/reads.fastq	01_data/test_data/ZNF8/2026.8.29-wt/WT_TSM20260828-020-01380_20260829-020-BAN05-4_B11.fastq	
-ZNF8	WT	reference.self		01_data/ln_test_data/ZNF8/WT/reference.self.fa	01_data/test_data/ZNF8/2026.8.29-wt/WT_TSM20260828-020-01380_20260829-020-BAN05-4_B11.1.seq	WT 自身共识
-ZNF8	WT	sanger	1	01_data/ln_test_data/ZNF8/WT/sanger.1.ab1	01_data/test_data/ZNF8/2026.8.29-wt/WT_TSM20260828-020-01380_20260829-020-BAN05-4_B11.1_1.ab1	

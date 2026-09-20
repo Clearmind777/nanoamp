@@ -1,3 +1,0 @@
-platform	tool	version	source	sha256	path	notes
-linux-x86_64	minimap2	2.31-r1302	https://github.com/lh3/minimap2/releases/download/v2.31/minimap2-2.31_x64-linux.tar.bz2	cb7e8f228d516fe4632a2250d09d1635ddd7aa95588c9fd5442d1dbe6e9a20a3	03_dependence/linux-x86_64/bin/minimap2	Official prebuilt binary
-linux-x86_64	samtools	1.12	copied from server (/usr/local/bin/samtools)	9ccb83aa3f850dbb38b901c2b8b5f8f65edc53f2f811d4bcc7f61e86aebaf5ce	03_dependence/linux-x86_64/bin/samtools	Optional fallback; Rsamtools is preferred; dynamically linked to system libraries

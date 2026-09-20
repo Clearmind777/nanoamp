@@ -21,11 +21,7 @@ jobs:
           dependencies: '"hard"'
           extra-packages: any::rcmdcheck, any::testthat
 
-      - name: Make bundled Linux tools executable
-        if: runner.os == 'Linux'
-        run: chmod +x 03_dependence/linux-x86_64/bin/* || true
-
       - name: Check package
         env:
           _R_CHECK_FORCE_SUGGESTS_: false
-        run: Rscript -e 'rcmdcheck::rcmdcheck("02_code/r", args = "--no-manual", error_on = "error")'
+        run: Rscript -e 'rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")'

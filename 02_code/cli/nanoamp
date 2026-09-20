@@ -1,4 +1,0 @@
-#!/bin/sh
-# Linux / macOS launcher for the nanoamp CLI.
-SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-exec Rscript --vanilla "$SCRIPT_DIR/nanoamp.R" "$@"

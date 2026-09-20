@@ -1,7 +1,0 @@
-dataset	sample	role	cluster	link_path	target_path	source_note
-ZNF8	clone_12	consensus	1	01_data/ln_test_data/ZNF8/clone_12/consensus.1.fa	01_data/test_data/ZNF8/ZNF8/12_TSM20260827-020-01363_20260828-020-BAN10-5_F01.1.seq	
-ZNF8	clone_12	reads		01_data/ln_test_data/ZNF8/clone_12/reads.fastq	01_data/test_data/ZNF8/ZNF8/12_TSM20260827-020-01363_20260828-020-BAN10-5_F01.fastq	
-ZNF8	clone_12	reference.self		01_data/ln_test_data/ZNF8/clone_12/reference.self.fa	01_data/test_data/ZNF8/ZNF8/12_TSM20260827-020-01363_20260828-020-BAN10-5_F01.1.seq	公司主导共识序列（cluster 1）
-ZNF8	clone_12	reference.wt		01_data/ln_test_data/ZNF8/clone_12/reference.wt.fa	01_data/test_data/ZNF8/2026.8.29-wt/WT_TSM20260828-020-01380_20260829-020-BAN05-4_B11.1.seq	WT 对照
-ZNF8	clone_12	sanger	1	01_data/ln_test_data/ZNF8/clone_12/sanger.1.ab1	01_data/test_data/ZNF8/ZNF8/12_TSM20260827-020-01363_20260828-020-BAN10-5_F01.1_1.ab1	
-ZNF8	clone_12	variants	1	01_data/ln_test_data/ZNF8/clone_12/variants.1.xlsx	01_data/test_data/ZNF8/ZNF8/12_TSM20260827-020-01363_20260828-020-BAN10-5_F01.1.变异统计表.xlsx	
